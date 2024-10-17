@@ -1,0 +1,7 @@
+# Ignore bin and tmp directories anywhere in the repository
+**/bin/
+**/tmp/
+.idea
+.vscode
+# Ignore .env files in all folders at any level
+**/.env

@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+option go_package = "github.com/QWIDEX/order-proccesing/common/api";
+
+package api;
+
+message Item {
+  string Id = 1;
+  int32 Quantity = 2;
+  string Name = 3;
+  int32 Price = 4;
+}
+
+message createOrderReq {
+  string Uid = 1;
+  repeated Item Items = 2;
+}
+
+message Order {
+  string Id = 1;
+  string Uid = 2;
+  repeated Item Items = 3;
+  string Status = 4;
+}
+
+service OrderService {
+  rpc createOrder(createOrderReq) returns (Order);
+}
+
